@@ -6,36 +6,60 @@ using System.Threading.Tasks;
 
 namespace W4D4_Training_Ses1 // Generics Sample
 {
+    class Parent
+    {
+
+    }
+
+    class child : Parent
+    {
+        
+    }
+
+    class grandchild : child
+    {
+
+    }
+
+    class something
+    {
+
+    }
+    
+    public class Device<T> where T : child
+    {
+        public T name { get; set; }
+        public T category { get; set; }
+    }
+
+    public class SampleClass<T>
+    {
+        T[] arrObj = new T[5];
+        int count = 0;
+
+        //Add
+        public void Add(T item)
+        {
+            if (count + 1 < 5)
+            {
+                arrObj[count] = item;
+            }
+            count++;
+        }
+
+        //indexer
+        public T this[int index]
+        {
+            get { return arrObj[index]; }
+            set { arrObj[index] = value; }
+        }
+    }
+
+
+
     class Program
     {
-       public class Device<T>
-        {
-            public T name { get; set; }
-            public T category { get; set; }
-        }
-
-        public class SampleClass<T>
-        {
-            T[] arrObj = new T[5];
-            int count = 0;
-
-            //Add
-            public void Add(T item)
-            {
-                if (count +1 <5)
-                {
-                    arrObj[count] = item;
-                }
-                count++;
-            }
-
-            //indexer
-            public T this [int index]
-            {
-                get { return arrObj[index]; }
-                set { arrObj[index] = value; }
-            }
-        }
+      
         
         static void Main(string[] args)
         {
@@ -70,8 +94,10 @@ namespace W4D4_Training_Ses1 // Generics Sample
         }
         private static void GenericAtClassLevel()
         {
-            Device<int> intObj = new Device<int>();
-            Device<float> floatObj = new Device<float>();
+           //classname<type> objectname = new classname<type>();
+            Device<Parent> intObj = new Device<Parent>();
+            Device<child> floatObj = new Device<child>();
+            Device<something> stringobj = new Device<something>();
 
             intObj.name = 1;
             intObj.category = 2;
