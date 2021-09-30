@@ -8,43 +8,76 @@ namespace W4D4_Training_Ses1 // Generics Sample
 {
     class Program
     {
+       public class Device<T>
+        {
+            public T name { get; set; }
+            public T category { get; set; }
+        }
+
+        public class SampleClass<T>
+        {
+            T[] arrObj = new T[5];
+            int count = 0;
+
+            //Add
+            public void Add(T item)
+            {
+                if (count +1 <5)
+                {
+                    arrObj[count] = item;
+                }
+                count++;
+            }
+
+            //indexer
+            public T this [int index]
+            {
+                get { return arrObj[index]; }
+                set { arrObj[index] = value; }
+            }
+        }
+        
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Before Swapping");
-            Console.WriteLine("a: " + a);
-            Console.WriteLine("b: " + b);
-            
-            swap<int>(ref a, ref b);
-
-            Console.WriteLine("After Swapping");
-            Console.WriteLine("a: " + a);
-            Console.WriteLine("b: " + b);
+            //GenericAtClassLevel();
+            GenericAtFunctionInsideClass();
+            Console.ReadLine();
 
 
-            
-            Console.WriteLine("Before Swapping");
-            Console.WriteLine("c: " + c);
-            Console.WriteLine("d: " + d);
+        }
 
-            swap<float>(ref c, ref d);
+        private static void GenericAtFunctionInsideClass()
+        {
+            SampleClass<float> floatclass = new SampleClass<float>;
+            floatclass.Add(3.4f);
+            floatclass.Add(2.4f);
+            floatclass.Add(1.4f);
 
-            Console.WriteLine("After Swapping");
-            Console.WriteLine("c: " + c);
-            Console.WriteLine("d: " + d);
+            for(int i = 0; i<3; i++)
+            {
+                Console.WriteLine(floatclass[i]);
+            }
 
-           
-            
-            Console.WriteLine("Before Swapping");
-            Console.WriteLine("s1: " + s1);
-            Console.WriteLine("s2: " + s2);
+            SampleClass<int> intclass = new SampleClass<int>;
+            intclass.Add(3);
+            intclass.Add(2);
+            intclass.Add(1);
 
-            swap<string>(ref s1, ref s2);
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(intclass[i]);
+            }
+        }
+        private static void GenericAtClassLevel()
+        {
+            Device<int> intObj = new Device<int>();
+            Device<float> floatObj = new Device<float>();
 
-            Console.WriteLine("After Swapping");
-            Console.WriteLine("s1: " + s1);
-            Console.WriteLine("s2: " + s2);
+            intObj.name = 1;
+            intObj.category = 2;
 
+            floatObj.name = 5.1f;
+            floatObj.category = 4.2f;
         }
 
         //public static void swap(int a, int b)
