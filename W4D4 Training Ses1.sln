@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W4D4 Training Ses1", "W4D4 Training Ses1\W4D4 Training Ses1.csproj", "{C5198F61-D200-4DE5-BEBA-AA1435B46303}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic Exampl_Part 2", "Generic Exampl_Part 2\Generic Exampl_Part 2.csproj", "{AA45A472-597C-46A6-8B83-038463FE5899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C5198F61-D200-4DE5-BEBA-AA1435B46303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5198F61-D200-4DE5-BEBA-AA1435B46303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5198F61-D200-4DE5-BEBA-AA1435B46303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA45A472-597C-46A6-8B83-038463FE5899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA45A472-597C-46A6-8B83-038463FE5899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA45A472-597C-46A6-8B83-038463FE5899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA45A472-597C-46A6-8B83-038463FE5899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

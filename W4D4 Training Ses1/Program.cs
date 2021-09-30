@@ -6,56 +6,82 @@ using System.Threading.Tasks;
 
 namespace W4D4_Training_Ses1 // Generics Sample
 {
-    class Parent
+    //class Parent
+    //{
+
+    //}
+
+    //class child : Parent
+    //{
+
+    //}
+
+    //class grandchild : child
+    //{
+
+    //}
+
+    //class something
+    //{
+
+    //}
+
+    //public class Device<T> where T : child
+    //{
+    //    public T name { get; set; }
+    //    public T category { get; set; }
+    //}
+
+    //public class SampleClass<T>
+    //{
+    //    T[] arrObj = new T[5];
+    //    int count = 0;
+
+    //    //Add
+    //    public void Add(T item)
+    //    {
+    //        if (count + 1 < 5)
+    //        {
+    //            arrObj[count] = item;
+    //        }
+    //        count++;
+    //    }
+
+    //    //indexer
+    //    public T this[int index]
+    //    {
+    //        get { return arrObj[index]; }
+    //        set { arrObj[index] = value; }
+    //    }
+    //}
+
+    public interface Numbers<T>     //how to define Generic Interface
     {
+        T add(T a, T b);
+
 
     }
 
-    class child : Parent
+    public class NumbersClass<T> : Numbers<T>
     {
-        
-    }
-
-    class grandchild : child
-    {
-
-    }
-
-    class something
-    {
-
-    }
-    
-    public class Device<T> where T : child
-    {
-        public T name { get; set; }
-        public T category { get; set; }
-    }
-
-    public class SampleClass<T>
-    {
-        T[] arrObj = new T[5];
-        int count = 0;
-
-        //Add
-        public void Add(T item)
+        public T add(T a, T b)
         {
-            if (count + 1 < 5)
-            {
-                arrObj[count] = item;
-            }
-            count++;
-        }
+            return a;
 
-        //indexer
-        public T this[int index]
-        {
-            get { return arrObj[index]; }
-            set { arrObj[index] = value; }
         }
     }
 
 
+    class Generic_Example_3
+    {
+        public void AddNumbers()
+        {
+            NumbersClass<int> myNumberClass = new NumbersClass<int>();
+            int result = myNumberClass.add(1, 1);
+            Console.WriteLine(result);
+
+        }
+    }
 
     class Program
     {
@@ -63,62 +89,70 @@ namespace W4D4_Training_Ses1 // Generics Sample
         
         static void Main(string[] args)
         {
-            //GenericAtClassLevel();
-            GenericAtFunctionInsideClass();
+            ////GenericAtClassLevel();
+            //GenericAtFunctionInsideClass();
+            //Console.ReadLine();
+
+            Generic_Example_3 genex3 = new Generic_Example_3();
+            genex3.AddNumbers();
             Console.ReadLine();
 
 
         }
 
-        private static void GenericAtFunctionInsideClass()
-        {
-            SampleClass<float> floatclass = new SampleClass<float>;
-            floatclass.Add(3.4f);
-            floatclass.Add(2.4f);
-            floatclass.Add(1.4f);
 
-            for(int i = 0; i<3; i++)
-            {
-                Console.WriteLine(floatclass[i]);
-            }
 
-            SampleClass<int> intclass = new SampleClass<int>;
-            intclass.Add(3);
-            intclass.Add(2);
-            intclass.Add(1);
 
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine(intclass[i]);
-            }
-        }
-        private static void GenericAtClassLevel()
-        {
-           //classname<type> objectname = new classname<type>();
-            Device<Parent> intObj = new Device<Parent>();
-            Device<child> floatObj = new Device<child>();
-            Device<something> stringobj = new Device<something>();
 
-            intObj.name = 1;
-            intObj.category = 2;
-
-            floatObj.name = 5.1f;
-            floatObj.category = 4.2f;
-        }
-
-        //public static void swap(int a, int b)
+        //private static void GenericAtFunctionInsideClass()
         //{
-        //    int temp = a;
+        //    SampleClass<float> floatclass = new SampleClass<float>;
+        //    floatclass.Add(3.4f);
+        //    floatclass.Add(2.4f);
+        //    floatclass.Add(1.4f);
+
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        Console.WriteLine(floatclass[i]);
+        //    }
+
+        //    SampleClass<int> intclass = new SampleClass<int>;
+        //    intclass.Add(3);
+        //    intclass.Add(2);
+        //    intclass.Add(1);
+
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        Console.WriteLine(intclass[i]);
+        //    }
+        //}
+        //private static void GenericAtClassLevel()
+        //{
+        //    //classname<type> objectname = new classname<type>();
+        //    Device<Parent> intObj = new Device<Parent>();
+        //    Device<child> floatObj = new Device<child>();
+        //    Device<something> stringobj = new Device<something>();
+
+        //    intObj.name = 1;
+        //    intObj.category = 2;
+
+        //    floatObj.name = 5.1f;
+        //    floatObj.category = 4.2f;
+        //}
+
+        ////public static void swap(int a, int b)
+        ////{
+        ////    int temp = a;
+        ////    a = b;
+        ////    b = temp;
+        ////}
+
+        ////Writing Generic Method
+        //public static void swap<T>(ref T a, ref T b)
+        //{
+        //    T temp = a;
         //    a = b;
         //    b = temp;
         //}
-
-        //Writing Generic Method
-        public static void swap<T>(ref T a, ref T b)
-        {
-            T temp = a;
-            a = b;
-            b = temp;
-        }
     }
 }
