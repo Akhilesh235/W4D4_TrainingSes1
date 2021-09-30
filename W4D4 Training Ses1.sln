@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W4D4 Training Ses1", "W4D4 Training Ses1\W4D4 Training Ses1.csproj", "{C5198F61-D200-4DE5-BEBA-AA1435B46303}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5198F61-D200-4DE5-BEBA-AA1435B46303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5198F61-D200-4DE5-BEBA-AA1435B46303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5198F61-D200-4DE5-BEBA-AA1435B46303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5198F61-D200-4DE5-BEBA-AA1435B46303}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CC1A8CD-1885-4E6A-B96F-0DE392EDF3AD}
+	EndGlobalSection
+EndGlobal
